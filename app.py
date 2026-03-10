@@ -237,9 +237,10 @@ with right_col:
                 except FileNotFoundError:
                     st.error("❌ `shimaore_french_dataset.csv` not found. Place it in the same folder as `app.py`.")
                 except Exception as e:
-                    st.error(f"❌ Error: {e}")
+                    st.error("⚠️ Something went wrong. Please try again in a moment.")
     else:
         st.markdown(
             '<div class="result-box" style="color:#a0b4c8 !important; font-style:italic;">Translation will appear here…</div>',
             unsafe_allow_html=True,
+
         )
