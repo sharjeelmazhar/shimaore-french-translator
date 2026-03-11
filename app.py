@@ -3,6 +3,24 @@ import pandas as pd
 import unicodedata
 from openai import OpenAI
 
+hide_streamlit = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+footer:after {content:''; display:none;}
+</style>
+"""
+
+st.markdown(hide_streamlit, unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+[data-testid="stToolbar"] {display: none;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True)
+
 # ── OpenAI API key ─────────────────────────────────────────────────────────
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
@@ -244,3 +262,4 @@ with right_col:
             unsafe_allow_html=True,
 
         )
+
